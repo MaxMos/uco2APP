@@ -1,17 +1,67 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
     <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
-    <title>云API</title>
-    <link rel="stylesheet" type="text/css" href="../css/api.css"/>
-    <link rel="stylesheet" type="text/css" href="../css/style.css"/>
+    <title>Hello APP</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css" />
+    <link rel="stylesheet" type="text/css" href="../css/aui.css" />
+    <link rel="stylesheet" type="text/css" href="../css/wap.css" />
     <style>
-        .empty{ text-align: center; padding: 120px 0; }
+
     </style>
 </head>
+
 <body>
-    <div class="empty">云API</div>
+    <!-- <div class="wap_brain">
+        <a href="/wap/article/20" class="item">
+            <div style="background-size: cover; display: block; background-image: url(&quot;https://gdrgms.oss-cn-shenzhen.aliyuncs.com/article_logo_23_1496654138.jpeg?OSSAccessKeyId=LTAIqGU5gqwu06Xg&amp;Expires=1496678400&amp;Signature=xEm0iAWvTCSYwYxJFSASQBEbwIA%3D&quot;);"
+                class="img lazy"></div>
+            <div class="line"></div>
+            <div class="post-meta"><span class="tag">中国节能网</span><span class="seperator">|</span><span class="date">2017-06-05 17:07</span><span class="type">转载</span></div>
+            <div class="title">重大突破：二氧化碳“变”汽油成真</div>
+        </a>
+    </div> -->
+    <div id='sys-info'></div>
 </body>
+<script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript">
+    apiready = function() {
+        var ver = api.version;
+        var sType = api.systemType;
+        var sVer = api.systemVersion;
+        var id = api.deviceId;
+        var model = api.deviceModel;
+        var name = api.deviceName;
+        var cType = api.connectionType;
+        var winName = api.winName;
+        var winWidth = api.winWidth;
+        var winHeight = api.winHeight;
+        var frameName = api.frameName || '';
+        var frameWidth = api.frameWidth || '';
+        var frameHeight = api.frameHeight || '';
+
+        var str = '<ul>';
+        str += '<li>引擎版本信息: ' + ver + '</li>';
+        str += '<li>系统类型: ' + sType + '</li>';
+        str += '<li>系统版本: ' + sVer + '</li>';
+        str += '<li>设备标识: ' + id + '</li>';
+        str += '<li>设备型号: ' + model + '</li>';
+        str += '<li>设备名称: ' + name + '</li>';
+        str += '<li>网络状态: ' + cType + '</li>';
+        str += '<li>主窗口名字: ' + winName + '</li>';
+        str += '<li>主窗口宽度: ' + winWidth + '</li>';
+        str += '<li>主窗口高度: ' + winHeight + '</li>';
+        str += '<li>子窗口名字: ' + frameName + '</li>';
+        str += '<li>子窗口宽度: ' + frameWidth + '</li>';
+        str += '<li>子窗口高度: ' + frameHeight + '</li>';
+        str += '</ul>';
+
+        $api.byId('sys-info').innerHTML = str;
+
+    };
+</script>
+
 </html>
